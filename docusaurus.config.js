@@ -83,7 +83,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'My Site',
+        title: '蘇茂雄',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -93,11 +93,11 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: '技術筆記',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: '部落格', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/sumaoxiong',
             label: 'GitHub',
             position: 'right',
           },
@@ -153,6 +153,8 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+  
+  plugins: ['docusaurus-plugin-sass'],
 };
 
 export default config;
