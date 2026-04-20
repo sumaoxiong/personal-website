@@ -1,9 +1,10 @@
 ---
 title: 將專案上傳至Github
-sidebar_label: "將專案上傳至Github"
+sidebar_label: "1.4 - 將專案上傳至Github"
 keywords:
   - React
   - github
+  - upload
 tags:
   - React
 ---

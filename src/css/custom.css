@@ -39,6 +39,7 @@
 /* ---------- Navbar ---------- */
 .navbar {
   backdrop-filter: blur(10px);
+  box-shadow: 0 2px 14px rgb(0 0 0 / 15%);
 }
 
 /* ---------- Sidebar ---------- */
@@ -81,8 +82,8 @@
 
 /* ---------- 程式碼區塊 ---------- */
 .theme-code-block {
-  border-radius: 14px;
   overflow: hidden;
+  padding: 0.5rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 

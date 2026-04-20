@@ -1,6 +1,6 @@
 ---
 title: 透過Vite建立React專案
-sidebar_label: "透過Vite建立React專案"
+sidebar_label: "1.3 - 透過Vite建立React專案"
 keywords:
   - React
   - Install

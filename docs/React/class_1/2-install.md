@@ -1,6 +1,6 @@
 ---
 title: 有關React開發的事前準備
-sidebar_label: "環境確認及安裝"
+sidebar_label: "1.2 - 環境確認及安裝"
 keywords:
   - React
   - Install
