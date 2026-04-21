@@ -1,6 +1,6 @@
 ---
 title: Axios攔截器
-sidebar_label: "5. - Axios攔截器"
+sidebar_label: "5.8 - Axios攔截器"
 keywords:
   - React
   - API
