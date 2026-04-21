@@ -126,6 +126,9 @@ article {
 
 .menu__list .menu__list{
   border-left: 2px solid #ced9e3;
+  border-bottom: 2px solid #ced9e3;
+  border-bottom-color: #ffffff00 ; /* 將底線影藏 */
   margin-left: 1rem;
   padding-left: 0.3rem;
+  border-radius: 0 0 0 10px;
 }
