@@ -80,7 +80,7 @@ function NotesSection() {
     {
       title: 'Vue 筆記',
       desc: '整理 Vue 3、Composition API 與前端開發常用觀念。',
-      link: '/docs/intro',
+      link: '/docs',
     },
     /* {
       title: 'Next.js 筆記',
