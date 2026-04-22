@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpersonal_website=self.webpackChunkpersonal_website||[]).push([["6801"],{8152(e){e.exports=JSON.parse('{"tags":[{"label":"git","permalink":"/personal-website/docs/tags/git","count":4},{"label":"React","permalink":"/personal-website/docs/tags/react","count":51}]}')}}]);
