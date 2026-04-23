@@ -134,7 +134,7 @@ npm run deploy
 
 > 以上操作做完後要去 GitHub repo 的 Settings 中的 pages 項目查看 GitHub Pages 的分支是否有設定正確
 
-進階設定請到下一章節 [Vite 專案部署到 GitHub Pages 的 Base 路徑設定](/HkFec0u6le) 中觀看
+進階設定請到下一章節 [Vite 專案部署到 GitHub Pages 的 Base 路徑設定](/docs/Vue3/class_9/github_pages_setting) 中觀看
 
 ## 6. 小結
 

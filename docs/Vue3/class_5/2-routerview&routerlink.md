@@ -43,7 +43,7 @@ import { RouterView } from "vue-router";
 - 可以在 Layout 中固定放置 `<RouterView>`，用來切換不同子頁面。
 
 :::info
-**RouterView** 會和 **巢狀路由** 做搭配使用，請先觀看[巢狀路由](/HkzTmDF3ex)，理解後再到[RouterView 與巢狀路由](/r19Hr_tngx)章節中觀看詳細說明
+**RouterView** 會和 **巢狀路由** 做搭配使用，請先觀看[巢狀路由](/docs/Vue3/class_5/nested_route)，理解後再到[RouterView 與巢狀路由](/docs/Vue3/class_5/routerview&nestedroute)章節中觀看詳細說明
 :::
 
 ## 2. RouterLink
