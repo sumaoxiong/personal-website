@@ -48,8 +48,6 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           
         },
         blog: {
@@ -81,6 +79,11 @@ const config = {
       colorMode: {
         defaultMode: 'light',
         respectPrefersColorScheme: true,
+      },
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true, //sidebar下拉式選單自動收折
+        },
       },
       navbar: {
         title: '蘇茂雄',
