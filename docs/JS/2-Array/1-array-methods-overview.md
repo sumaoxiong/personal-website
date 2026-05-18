@@ -104,7 +104,7 @@ const product = products.find((item) => item.id === 1);
 
 - 適合用在「找指定 id 的資料」
 
-### filter：篩選多筆資料
+### 4️⃣ filter：篩選多筆資料
 
 ```js
 const cheapProducts = products.filter((item) => item.price < 5000);

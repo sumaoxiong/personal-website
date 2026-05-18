@@ -35,7 +35,7 @@ tags:
 
 ---
 
-## 🔗 綜合使用流程
+## 綜合使用流程
 
 ```js
 const result = data
