@@ -35,35 +35,74 @@ console.log(newArr); // [1, 2, 3]
 
 👉 等同於複製一份新陣列
 
-### 2️⃣ 物件展開
+### 2️⃣ 陣列合併
 
 ```js
-const user = { name: "Tom", age: 18 };
-const newUser = { ...user };
+const arr1 = [1, 2];
+const arr2 = [3, 4];
 
-console.log(newUser); // { name: "Tom", age: 18 }
-```
+const result = [...arr1, ...arr2];
 
-### 3️⃣ 合併資料
-
-#### 陣列合併
-
-```js
-const a = [1, 2];
-const b = [3, 4];
-
-const result = [...a, ...b];
 console.log(result); // [1, 2, 3, 4]
 ```
 
-#### 物件合併
+### 3️⃣ 新增陣列資料
 
 ```js
-const a = { name: "Tom" };
-const b = { age: 18 };
+const carts = [{ id: 1 }, { id: 2 }];
 
-const result = { ...a, ...b };
-console.log(result); // { name: "Tom", age: 18 }
+const newCart = { id: 3 };
+
+const newCarts = [...carts, newCart];
+```
+
+👉 常見於購物車新增。
+
+### 4️⃣ 物件展開
+
+```js
+const user = {
+  name: "Tom",
+  age: 18,
+};
+
+const newUser = {
+  ...user,
+};
+```
+
+### 5️⃣ 物件合併
+
+```js
+const user = {
+  name: "Tom",
+};
+
+const extra = {
+  age: 18,
+};
+
+const result = {
+  ...user,
+  ...extra,
+};
+```
+
+### 6️⃣ 更新物件資料
+
+```js
+const user = {
+  name: "Tom",
+  age: 18
+};
+
+
+const updatedUser = {
+  ...user,
+  age: 20
+};
+
+👉 常見於 React / Vue state 更新。le.log(result); // { name: "Tom", age: 18 }
 ```
 
 ## ⚠️ 重要觀念
