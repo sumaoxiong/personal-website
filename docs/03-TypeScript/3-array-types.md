@@ -115,6 +115,20 @@ scores.push("100");
 
 ---
 
+### 聯合型別陣列 (Union Type Array)
+
+當陣列中需要同時包含多種不同的型別時，可以使用 `(Type1 | Type2)[]` 的語法（即 Union Type 聯合型別）。
+
+```ts
+const arr1 = [1, 2, "3"]; //將空陣列內的型別限定在number和string，不建議用這種寫法，後續維護時無法快速判斷
+
+const arr2: (number | boolean)[] = []; //將空陣列內的型別限定在number和boolean
+```
+
+進階寫法請參考後面的[`Tuple`](#tuple元組)
+
+---
+
 ### Boolean Array
 
 ```ts
@@ -355,6 +369,13 @@ Tuple 是：
 
 ```ts
 let user: [string, number];
+```
+
+```ts title="二維陣列"
+const tu1: [number, number][] = [
+  [11, 22],
+  [33, 44],
+];
 ```
 
 ---
