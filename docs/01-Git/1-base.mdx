@@ -1,0 +1,143 @@
+---
+title: Git 基礎與日常提交
+sidebar_label: "1. 基礎與日常提交"
+keywords:
+  - git
+  - commit
+  - staging area
+tags:
+  - git
+---
+
+Git 負責在本機記錄版本；GitHub、GitLab 則是放置 Git 倉庫、進行 Code Review 與團隊協作的平台。即使尚未連上網路，`add`、`commit`、`log` 等 Git 操作仍可正常使用。
+
+{/*
+
+## 第一次使用 Git
+
+先設定會寫入 commit 的作者資訊：
+
+```sh
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --global init.defaultBranch main
+```
+
+查看設定值與來源：
+
+```sh
+git config --list --show-origin
+git config user.name
+git config user.email
+```
+
+> `--global` 套用到這台電腦的所有倉庫。若某個專案需要不同帳號，在該倉庫內去掉 `--global` 重新設定即可。
+
+*/}
+
+## 取得 Git 倉庫
+
+### 將現有資料夾變成 Git 倉庫
+
+```sh
+cd project-folder
+git init
+```
+
+> 在github建立repo後就會有操作提示，可以按照上面的操作即可。
+
+### 下載已經存在的遠端倉庫
+
+```sh
+git clone git@github.com:account/project.git
+cd project
+```
+
+`clone` 會同時建立本機倉庫、下載歷史，並把遠端自動命名為 `origin`，因此不需要再執行 `git init` 或 `git remote add origin`。
+
+## 先理解三個區域
+
+```text
+工作目錄  -- git add -->  暫存區  -- git commit -->  本機倉庫
+
+```
+
+- **工作目錄**：正在編輯、尚未準備提交的內容。
+- **暫存區（staging area）**：這一次 commit 打算收錄的內容。
+- **本機倉庫**：已建立的 commit 歷史，尚未必推送到 GitHub。
+
+`git push` 才是將本機 commit 送到遠端。
+
+## 日常工作流程
+
+### 1. 確認目前狀態
+
+```sh
+git status                  # 看目前分支 + 工作區 / 暫存區狀態
+git branch --show-current   # 看目前分支 + 工作區 / 暫存區狀態
+```
+
+每次操作前先看 `git status`，能避免在錯誤的分支上提交。
+
+### 2. 查看實際改動
+
+```sh
+git diff             # 尚未加入暫存區的改動
+git diff --staged    # 已加入暫存區、下次會 commit 的改動
+git diff --stat      # 只看改動檔案與行數摘要
+```
+
+### 3. 選擇要提交的內容
+
+```sh
+git add path/to/file
+git add path/to/folder
+git add -p
+git add .
+```
+
+- `git add -p` 可逐段確認，很適合一個檔案中同時有多種修改時使用。
+- `git add .` 會加入目前目錄下所有改動，使用後應再看一次 `git diff --staged`，不要把秘密金鑰或無關檔案一起提交。
+
+將檔案移出暫存區，但保留工作目錄的修改：
+
+```sh
+git restore --staged path/to/file
+```
+
+### 4. 建立 commit
+
+```sh
+git commit -m "feat: add login form"
+```
+
+好的 commit 應該只處理一個主題，訊息說明「這次改了什麼」。常見前綴有 `feat`、`fix`、`docs`、`refactor`、`test` 與 `chore`；但應優先遵循團隊規範。
+
+### 5. 查看歷史
+
+```sh
+git log --oneline --graph --decorate --all
+git show commit-id
+```
+
+`git log` 預設會進入分頁畫面，按 `q` 離開。`commit-id` 可使用前幾碼，只要在該倉庫內足以唯一識別即可。
+
+## `.gitignore`
+
+在專案根目錄建立 `.gitignore`，排除不應進入版本控制的檔案：
+
+```gitignore
+node_modules/
+dist/
+.env
+.DS_Store
+```
+
+`.gitignore` 只對「尚未被 Git 追蹤」的檔案有效。若檔案已經 commit，需先停止追蹤：
+
+```sh
+git rm --cached .env
+git commit -m "chore: stop tracking environment file"
+```
+
+> 若密碼、API key 或 token 曾經提交，單純刪除檔案不代表密密已從歷史消失。應先立即撤銷並更換該憑證，再處理 Git 歷史。
